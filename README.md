@@ -5,15 +5,15 @@ configured using a simple pywb-style YAML file.
 
 ```yaml
 collections:
-  testcoll: /data/cdx
+  testcoll: /data/cdx/
 
   coll2:
-    index: /data/cdx
-    resource: /data/warcs
+    index: /data/cdx/
+    resource: /data/warcs/
 
   remotecoll:
-    index: http://cdx.example.org/cdx
-    resource: http://warcs.example.org/warcs
+    index: http://cdx.example.org/cdx/
+    resource: http://warcs.example.org/warcs/
 
   # While YAML is not quite as flexible as Spring XML you can call setters
   # on bean-like objects and pass arguments to constructors.
@@ -34,10 +34,19 @@ collections:
 surt_ordered: true
 ```
 
+## Running it
+
+Either deploy to app container (Jetty, Tomcat) or just run:
+
+    mvn jetty:run -Dwayback.config=config.yaml
+
+Set the path to your config.yaml using the `wayback.config` system property,
+servlet context init paramter or the environment variable `WAYBACK_CONFIG`.
+
 ## Why?
 
-* More readable and simpler
-* Far, far more approachable for non-programmers (and arguably to most programmers too!)
+* Simple and readable
+* Approachable for non-programmers (and arguably to most programmers too!)
 * Decouples the configuration format from implementation details of the application (class, property names) allowing refactoring and deprecation
 * Potential for better error messages and deprecation warnings
-* Pywb and owb could share a configuration subset, allowing easy testing with both  
+* Pywb and (Open)Wayback could share a common configuration subset  

@@ -5,6 +5,7 @@ import org.archive.wayback.ResourceIndex;
 import org.archive.wayback.ResourceStore;
 import org.archive.wayback.archivalurl.ArchivalUrlRequestParser;
 import org.archive.wayback.archivalurl.ArchivalUrlResultURIConverter;
+import org.archive.wayback.query.Renderer;
 import org.archive.wayback.resourceindex.LocalResourceIndex;
 import org.archive.wayback.resourceindex.WatchedCDXSource;
 import org.archive.wayback.resourceindex.cdx.CDXIndex;
@@ -42,6 +43,10 @@ public class WaybackEasy implements Closeable {
             AccessPoint accessPoint = new AccessPoint();
             accessPoint.setServletContext(servletContext);
             accessPoint.setReplay(replay);
+
+            Renderer query = new Renderer();
+            query.setCaptureJsp("/WEB-INF/query/CalendarResults.jsp");
+            accessPoint.setQuery(query);
 
             ArchivalUrlRequestParser parser = new ArchivalUrlRequestParser();
             parser.init();

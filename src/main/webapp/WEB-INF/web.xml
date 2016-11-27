@@ -8,7 +8,7 @@
 
     <filter>
         <filter-name>RunnerRequestFilter</filter-name>
-        <filter-class>org.netpreserve.openwayback.runner.RunnerRequestFilter</filter-class>
+        <filter-class>org.netpreserve.openwayback.WaybackEasyFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>RunnerRequestFilter</filter-name>
