@@ -5,7 +5,7 @@ configured using a simple pywb-style YAML file.
 
 ```yaml
 collections:
-  testcoll: /data/cdx/
+  testcoll: /data/example/
 
   coll2:
     index: /data/cdx/
@@ -36,6 +36,13 @@ surt_ordered: true
 
 ## Running it
 
+Put some WARCs and CDX files somewhere.
+
+   ```
+   collections:
+     example: /data/warcs-and-cdxes/
+   ```
+
 Either deploy to app container (Jetty, Tomcat) or just run:
 
     mvn jetty:run -Dwayback.config=config.yaml
@@ -43,10 +50,21 @@ Either deploy to app container (Jetty, Tomcat) or just run:
 Set the path to your config.yaml using the `wayback.config` system property,
 servlet context init paramter or the environment variable `WAYBACK_CONFIG`.
 
+Hit http://localhost:8080/example/ in your browser.
+
 ## Why?
 
 * Simple and readable
 * Approachable for non-programmers (and arguably to most programmers too!)
 * Decouples the configuration format from implementation details of the application (class, property names) allowing refactoring and deprecation
 * Potential for better error messages and deprecation warnings
-* Pywb and (Open)Wayback could share a common configuration subset  
+* Pywb and (Open)Wayback could share a common configuration subset
+  
+## Known Issues
+
+These are trivially fixable, I just haven't gotten around to it as this is a
+proof of concept.
+
+* No root index page.
+* Error if you don't have a trailing slash on the collection URL
+* Only a few things can be configured.
