@@ -1,0 +1,16 @@
+collections:
+  testcoll: ${TESTDIR}/cdx
+
+  coll2:
+    index: ${TESTDIR}/cdx
+    resource: ${TESTDIR}
+
+  remotecoll:
+    index: http://cdx.example.org/cdx
+    resource: http://warcs.example.org/warcs
+
+  locationdb:
+    index: ${TESTDIR}/cdx
+    resource: !!org.archive.wayback.resourcestore.LocationDBResourceStore
+      db: !!org.archive.wayback.resourcestore.locationdb.RemoteResourceFileLocationDB
+      - http://example.org/location-db
