@@ -23,7 +23,7 @@ collections:
   # Obviously this power should only be used if you have to, as 
   # it couples the configuration to class names.
   locationdb:
-    index: ${TESTDIR}/cdx
+    index: /data/cdx/
     resource: !!org.archive.wayback.resourcestore.LocationDBResourceStore
       db: !!org.archive.wayback.resourcestore.locationdb.RemoteResourceFileLocationDB
       - http://example.org/location-db
