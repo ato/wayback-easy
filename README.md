@@ -34,16 +34,18 @@ surt_ordered: true
 ## Running it
 
 Put some WARCs and CDX files somewhere. Create a config.yaml containing
-saying where:
+a collection:
 
-   ```
-   collections:
-     example: /data/warcs-and-cdxes/
-   ```
+```
+collections:
+  example: /data/warcs-and-cdxes/
+```
 
 Either deploy to app container (Jetty, Tomcat) or just run:
 
-    mvn jetty:run -Dwayback.config=config.yaml
+```sh
+mvn jetty:run -Dwayback.config=config.yaml
+```
 
 Set the path to your config.yaml using the `wayback.config` system property,
 servlet context init paramter or the environment variable `WAYBACK_CONFIG`.
