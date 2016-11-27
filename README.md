@@ -36,7 +36,8 @@ surt_ordered: true
 
 ## Running it
 
-Put some WARCs and CDX files somewhere.
+Put some WARCs and CDX files somewhere. Create a config.yaml containing
+saying where:
 
    ```
    collections:
