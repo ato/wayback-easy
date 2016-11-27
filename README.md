@@ -20,11 +20,8 @@ collections:
   # So the same sort of mechanisms can be used to enable custom
   # implementations of some components.
   #
-  # Obviously this power should only be used in non-standard cases, as like
-  # Spring XML it couples the configuration to class names.
-  #
-  # Note that abbreviations can be defined. So these could be tagged "!locationdb"
-  # instead to maintain decoupling.
+  # Obviously this power should only be used if you have to, as 
+  # it couples the configuration to class names.
   locationdb:
     index: ${TESTDIR}/cdx
     resource: !!org.archive.wayback.resourcestore.LocationDBResourceStore
@@ -56,7 +53,7 @@ Hit http://localhost:8080/example/ in your browser.
 ## Why?
 
 * Simple and readable
-* Approachable for non-programmers (and arguably to most programmers too!)
+* Approachable for non-programmers (and arguably for most programmers too!)
 * Decouples the configuration format from implementation details of the application (class, property names) allowing refactoring and deprecation
 * Potential for better error messages and deprecation warnings
 * Pywb and (Open)Wayback could share a common configuration subset
@@ -69,3 +66,4 @@ proof of concept.
 * No root index page.
 * Error if you don't have a trailing slash on the collection URL
 * Only a few things can be configured.
+* Probably lots of other issues, I haven't tested this much.
